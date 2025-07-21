@@ -1,12 +1,42 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bet Challenge App
 
-Currently, two official plugins are available:
+This is a full-stack React application built with Vite and Supabase. Users can create, read, update, and delete (CRUD) challenge posts, and place bets on them. All data is stored and synced with a Supabase Postgres database.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Create**: Add new challenge posts with a title, author, and description.
+- **Read**: View all challenge posts on the homepage, loaded live from the Supabase database.
+- **Update**: Edit any post and save changes directly to the database.
+- **Delete**: Remove posts from the database.
+- **Bet Count**: Click the bet button on any post to increment its bet count, which is saved and persisted in the database.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Demo
+
+Deployed on Netlify: [https://elaborate-pasca-28eaba.netlify.app/](https://elaborate-pasca-28eaba.netlify.app/)
+
+## Video Walkthrough
+
+Loom video: [https://www.loom.com/share/c8c6c8bf4f5e4d9fafd179defd1eb383](https://www.loom.com/share/c8c6c8bf4f5e4d9fafd179defd1eb383)
+
+## Tech Stack
+
+- React (with React Router)
+- Vite
+- Supabase (Postgres, Auth, REST API)
+- Netlify (deployment)
+
+## How It Works
+
+1. **Homepage**: Displays all posts from the Supabase database, sorted by creation time.
+2. **Create Post**: Fill out the form to add a new challenge. The post is saved to Supabase and appears on the homepage.
+3. **Edit Post**: Click the three-dot menu on a post to edit or delete it. Updates and deletions are reflected in the database and UI.
+4. **Bet Button**: Click the bet button to increment the bet count for a post. The count is updated in the database and persists across reloads.
+
+## SPA Routing on Netlify
+
+This app uses client-side routing. The `/public/_redirects` file ensures all routes are served by `index.html` to prevent 404 errors on refresh or direct navigation.
+
+---
+
+Enjoy using and customizing the Bet Challenge App!
